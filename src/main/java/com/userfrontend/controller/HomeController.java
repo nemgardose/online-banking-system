@@ -80,8 +80,11 @@ public class HomeController {
 		PrimaryAccount primaryAccount = user.getPrimaryAccount();
 		SavingsAccount savingsAccount = user.getSavingsAccount();
 		
+		String auth_user = user.getFirstName().concat(" ").concat(user.getLastName());
+		
 		model.addAttribute("primaryAccount", primaryAccount);
 		model.addAttribute("savingsAccount", savingsAccount);
+		model.addAttribute("auth_user", auth_user);
 		
 		return "userFront";
 		
