@@ -29,6 +29,9 @@ public class AccountController {
 	@RequestMapping("/primaryAccount")
 	public String primaryAccount(Model model, Principal principal) {
 		User user = userService.findByUsername(principal.getName());
+		
+		System.out.println("User name: " + user);
+		
 		PrimaryAccount primaryAccount = user.getPrimaryAccount();
 		
 		model.addAttribute("primaryAccount", primaryAccount);
